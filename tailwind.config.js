@@ -32,6 +32,27 @@ module.exports = {
         'mob-tiny': ['12px', { lineHeight: '1.5' }],
         'mob-tiny2': ['10px', { lineHeight: '1.5' }],
       },
+      colors: {
+        primary: {
+          red: '#DC3545',
+          redDark: '#BD2B2C',
+        },
+        secondary: {
+          yellow: '#FFB923',
+        },
+        neutral: {
+          white: '#F1F1F1',
+          black: '#000000',
+          grayLight: '#6D6D6F',
+          grayDark: '#212529',
+        },
+        gradient: {
+          red: ['#DC3545', '#B42318'],
+          yellow: ['#FFB923', '#DFA220'],
+          white: ['#FFFFFF', '#EAEAEA'],
+          gray: ['#212529', '#212529'],
+        },
+      },
     },
   },
   plugins: [],
