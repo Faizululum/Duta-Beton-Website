@@ -4,7 +4,7 @@ import Logo from "../ui/Logo";
 
 export default function Navbar() {
   return (
-    <div className="h-[100px] w-full flex justify-between items-center px-bold-4xl font-roboto font-normal">
+    <nav className="h-[100px] w-full flex justify-between items-center px-bold-4xl font-roboto font-normal fixed drop-shadow-md bg-white">
       <Logo />
       <div className="flex gap-10 items-center">
         <Link href="/">Beranda</Link>
@@ -13,9 +13,9 @@ export default function Navbar() {
         <Link href="/project">Proyek</Link>
         <Link href="/calculator">Kalkulator</Link>
         <Link href="/contact">
-            <Button label="Hubungi Kami" icon="phoneRed" variant="outline" />
+          <Button label="Hubungi Kami" icon="phoneRed" variant="outline" />
         </Link>
       </div>
-    </div>
+    </nav>
   );
 }
