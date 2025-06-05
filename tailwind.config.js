@@ -25,10 +25,10 @@ module.exports = {
         "mob-h3": ["32px", { lineHeight: "1.3" }],
         "mob-h4": ["24px", { lineHeight: "1.35" }],
         "mob-h5": ["20px", { lineHeight: "1.4" }],
-        "mob-h6": ["18px", { lineHeight: "1.45" }],
-        "mob-tagline": ["16px", { lineHeight: "1.5" }],
-        "mob-tiny": ["12px", { lineHeight: "1.5" }],
-        "mob-tiny2": ["10px", { lineHeight: "1.5" }],
+        "mob-h6": ["16px", { lineHeight: "1.45" }],
+        "mob-tagline": ["12px", { lineHeight: "1.5" }],
+        "mob-tiny": ["10px", { lineHeight: "1.5" }],
+        "mob-tiny2": ["8px", { lineHeight: "1.5" }],
       },
       colors: {
         primary: {
@@ -66,6 +66,12 @@ module.exports = {
         "bold-2xl": "64px",
         "bold-3xl": "72px",
         "bold-4xl": "105px",
+      },
+      boxShadow: {
+        'shadow-card-small': '0px 4px 24px rgba(0, 0, 0, 0.08)',
+        'shadow-card': '0px 4px 54px rgba(0, 0, 0, 0.08)',
+        'shadow-card-large': '0px 4px 24px rgba(0, 0, 0, 0.12)',
+        'shadow-card-strong': '0px 8px 16px rgba(0, 0, 0, 0.25)',
       },
     },
   },
