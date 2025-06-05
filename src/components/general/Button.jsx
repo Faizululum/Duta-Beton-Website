@@ -9,12 +9,13 @@ const ICONS = {
 
 export default function Button({
   label,
-  variant = "filled",     // 'filled', 'outline', 'disabled'
-  color = "red",           // 'red', 'gray'
-  icon = "arrow",          // 'arrow', 'phone'
+  variant = "filled", // 'filled', 'outline', 'disabled'
+  color = "red", // 'red', 'gray'
+  icon = "arrow", // 'arrow', 'phone'
   onClick,
 }) {
-  const base = "flex items-center gap-2 rounded-full font-medium text-desk-tagline pr-1 pl-3 py-1 transition";
+  const base =
+    "flex items-center gap-1 md:gap-2 rounded-full font-medium text-mob-tagline md:text-desk-tagline pr-thin-xs md:pr-1 pl-thin-md md:pl-3 py-thin-xs md:py-1 transition";
 
   const variants = {
     filled: {
@@ -30,16 +31,24 @@ export default function Button({
     },
   };
 
-  const classes = clsx(
-    base,
-    variants[variant][color]
-  );
+  const classes = clsx(base, variants[variant][color]);
 
   return (
-    <button className={classes} disabled={variant === "disabled"} onClick={onClick}>
+    <button
+      className={classes}
+      disabled={variant === "disabled"}
+      onClick={onClick}
+    >
       {label}
       {icon && (
-        <Image src={ICONS[icon]} alt="icon" width={32} height={32} />
+        <div className="relative w-[22px] h-[22px] md:w-[32px] md:h-[32px]">
+          <Image
+            src={ICONS[icon]}
+            alt="icon"
+            fill
+            sizes="(min-width: 768px) 32px, 22px"
+          />
+        </div>
       )}
     </button>
   );
