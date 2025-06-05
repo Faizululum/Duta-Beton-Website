@@ -1,6 +1,6 @@
-# Website Resmi PT. Duta Beton Mandiri
+# Website PT. Duta Beton Mandiri
 
-Ini adalah proyek website resmi untuk **PT. Duta Beton Mandiri**, sebuah perusahaan manufaktur yang bergerak di bidang beton dan pengembangannya.
+Ini adalah proyek website untuk **PT. Duta Beton Mandiri**, sebuah perusahaan manufaktur yang bergerak di bidang beton dan pengembangannya.
 
 ## 🏗 Tentang Perusahaan
 
@@ -24,7 +24,7 @@ Kami berkomitmen terhadap kebijakan mutu berstandar **ISO 9001:2015** (Sertifika
 
 ## 🧱 Teknologi
 
-- [Next.js](https://nextjs.org) (Tanpa TypeScript)
+- [Next.js](https://nextjs.org)
 - [Tailwind CSS v3](https://tailwindcss.com)
 - Custom Design System dari Figma
 - Fully Responsive Layout
