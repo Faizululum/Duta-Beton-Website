@@ -11,7 +11,7 @@ export default function Button({
   label,
   variant = "filled", // 'filled', 'outline', 'disabled'
   color = "red", // 'red', 'gray'
-  icon = "arrow", // 'arrow', 'phone'
+  icon = "arrowRed", // 'arrow', 'phone'
   onClick,
 }) {
   const base =
