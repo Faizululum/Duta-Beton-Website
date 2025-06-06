@@ -1,9 +1,11 @@
-import HeroLayout from "@/components/layout/HeroLayout";
+import HomeHero from "@/components/page/HomeHero";
+import WhyCard from "@/components/page/WhyCard";
 
 export default function Home() {
   return (
-    <div className="h-screen flex items-center">
-      <HeroLayout />
+    <div>
+      <HomeHero />      
+      <WhyCard />
     </div>
   );
 }
