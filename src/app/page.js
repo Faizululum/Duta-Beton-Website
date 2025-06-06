@@ -1,4 +1,5 @@
 import HomeHero from "@/components/page/HomeHero";
+import ProjectTrust from "@/components/page/ProjectTrust";
 import WhyCard from "@/components/page/WhyCard";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <div>
       <HomeHero />      
       <WhyCard />
+      <ProjectTrust />
     </div>
   );
 }
