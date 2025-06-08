@@ -7,7 +7,7 @@ export default function TitleLayout({ title, description, align = "center" }) {
       <h2 className="text-mob-h4 md:text-desk-h4 font-medium capitalize">
         {title}
       </h2>
-      <p className="text-mob-tagline md:text-desk-tiny font-normal text-primary-red">
+      <p className="text-mob-tagline md:text-desk-tagline font-normal text-primary-red">
         {description}
       </p>
     </div>
