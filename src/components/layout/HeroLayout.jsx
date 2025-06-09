@@ -13,7 +13,10 @@ export default function HeroLayout() {
           </p>
         </div>
       </div>
-      <Button label="Lihat Produk" icon="arrowRed" variant="outline" color="white" />
+      <div>
+
+      <Button label="Lihat Produk" icon="arrowRedFill" variant="outline" color="white" />
+      </div>
     </div>
   );
 }

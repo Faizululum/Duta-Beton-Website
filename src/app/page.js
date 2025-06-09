@@ -1,5 +1,6 @@
 import AboutSection from "@/components/page/AboutSection";
 import HomeHero from "@/components/page/HomeHero";
+import ProductSection from "@/components/page/ProductSection";
 import ProjectTrust from "@/components/page/ProjectTrust";
 import TrustedSection from "@/components/page/TrustedSection";
 import WhyCard from "@/components/page/WhyCard";
@@ -11,6 +12,7 @@ export default function Home() {
       <WhyCard />
       <ProjectTrust />
       <AboutSection />
+      <ProductSection />
       <TrustedSection />
     </div>
   );

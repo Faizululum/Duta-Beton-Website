@@ -73,6 +73,12 @@ module.exports = {
         'shadow-card-large': '0px 4px 24px rgba(0, 0, 0, 0.12)',
         'shadow-card-strong': '0px 8px 16px rgba(0, 0, 0, 0.25)',
       },
+      dropShadow: {
+        'shadow-card-small': '0px 4px 24px rgba(0, 0, 0, 0.08)',
+        'shadow-card': '0px 4px 54px rgba(0, 0, 0, 0.08)',
+        'shadow-card-large': '0px 4px 24px rgba(0, 0, 0, 0.12)',
+        'shadow-card-strong': '0px 8px 16px rgba(0, 0, 0, 0.25)',
+      },
     },
   },
   plugins: [],
