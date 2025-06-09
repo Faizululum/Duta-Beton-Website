@@ -3,7 +3,7 @@ import TrustedCard from "../ui/TrustedCard";
 
 export default function TrustedSection() {
   return (
-    <div className="space-text-section overflow-hidden">
+    <div className="space-text-section overflow-x-clip">
       <TitleLayout
         title="Dipercaya Oleh"
         description="Trusted by the best brands in the world"
