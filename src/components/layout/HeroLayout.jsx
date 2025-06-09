@@ -14,8 +14,7 @@ export default function HeroLayout() {
         </div>
       </div>
       <div>
-
-      <Button label="Lihat Produk" icon="arrowRedFill" variant="outline" color="white" />
+      <Button label="Lihat Produk" icon="arrowRedOutline" variant="outline" color="white" />
       </div>
     </div>
   );

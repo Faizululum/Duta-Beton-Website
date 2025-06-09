@@ -54,7 +54,7 @@ export default function Button({
       {icon && (
         <div className="relative w-[22px] h-[22px] md:w-[32px] md:h-[32px]">
           <Image
-            src={ICONS[icon] || ICONS.arrowRedFill}
+            src={ICONS[icon] || ICONS.phoneRedFill}
             alt="icon"
             fill
             sizes="(min-width: 768px) 32px, 22px"
