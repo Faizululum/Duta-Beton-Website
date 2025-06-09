@@ -13,7 +13,18 @@ export default function HomeHero() {
       />
       <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black/65 via-black/50 via-50% to-black/0 to-88% pointer-events-none -z-10" />
       <div className="relative z-10 h-full flex items-center">
-        <HeroLayout />
+        <HeroLayout
+          title="Ready Mix"
+          subtitle="Duta Beton Mandiri"
+          description="Didesain dengan campuran yang sesuai takaran yang dibutuhkan, untuk memudahkan dan menjadikan pekerjaan pengerasan lebih cepat."
+          textColor="text-white"
+          buttonProps={{
+            label: "Lihat Produk",
+            icon: "arrowRedOutline",
+            variant: "outline",
+            color: "white",
+          }}
+        />
       </div>
     </div>
   );
