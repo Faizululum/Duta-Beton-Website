@@ -3,7 +3,7 @@ import HeroLayout from "../layout/HeroLayout";
 
 export default function HomeHero() {
   return (
-    <div className="relative h-screen w-full">
+    <div className="relative md:p-bold-4xl h-screen w-full">
       <Image
         src="/hero.png"
         alt="hero"
