@@ -14,7 +14,7 @@ export default function CardImage({ src, alt = "image", align = "right" }) {
         src={src}
         alt={alt}
         fill
-        className="rounded-3xl object-cover relative z-10"
+        className="rounded-3xl object-cover relative z-10 shadow-shadow-card-large"
         sizes="(min-width: 768px) 516px, 364px"
       />
     </div>
