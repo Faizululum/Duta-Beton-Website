@@ -17,4 +17,16 @@
   .hero-section {
     @apply w-full md:h-screen py-bold-3xl md:pt-[100px] flex flex-col md:flex-row items-center justify-center md:justify-between md:px-bold-4xl;
   }
+  .gradient-white {
+    @apply bg-gradient-to-t to-gradient-white-0 from-gradient-white-1;
+  }
+  .gradient-red {
+    @apply bg-gradient-to-t to-gradient-red-0 from-gradient-red-1;
+  }
+  .gradient-gray {
+    @apply bg-gradient-to-t to-gradient-gray-0 from-gradient-gray-1;
+  }
+  .gradient-yellow {
+    @apply bg-gradient-to-t to-gradient-yellow-0 from-gradient-yellow-1;
+  }
 }
