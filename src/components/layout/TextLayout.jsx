@@ -14,13 +14,14 @@ export default function TitleLayout({ title, description, align = "center" }) {
   );
 }
 
-export function BodyLayout({ title, description }) {
+export function BodyLayout({ title, description, subtitle = "" }) {
   return (
     <div className="flex flex-col gap-thin-md md:gap-thin-lg">
       <h1 className="text-mob-h2 font-medium md:text-desk-h2">{title}</h1>
-      <p className="text-desc">
-        {description}
-      </p>
+      <h3 className="text-mob-tagline md:text-desk-tagline font-medium">
+        {subtitle}
+      </h3>
+      <p className="text-desc">{description}</p>
     </div>
   );
 }
