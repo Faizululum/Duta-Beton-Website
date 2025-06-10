@@ -14,4 +14,7 @@
   .border-bottom {
     @apply border-b-4 md:border-b-8 border-primary-red;
   }
+  .hero-section {
+    @apply w-full md:h-screen py-bold-3xl md:pt-[100px] flex flex-col md:flex-row items-center justify-center md:justify-between md:px-bold-4xl;
+  }
 }
