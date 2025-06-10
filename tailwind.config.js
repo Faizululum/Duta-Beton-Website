@@ -70,6 +70,7 @@ module.exports = {
       boxShadow: {
         'shadow-card-small': '0px 4px 24px rgba(0, 0, 0, 0.08)',
         'shadow-card': '0px 4px 54px rgba(0, 0, 0, 0.08)',
+        'shadow-icon': '4px 4px 12px rgba(0, 0, 0, 0.24)',
         'shadow-card-large': '0px 4px 24px rgba(0, 0, 0, 0.12)',
         'shadow-card-strong': '0px 8px 16px rgba(0, 0, 0, 0.25)',
       },
