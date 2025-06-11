@@ -29,4 +29,13 @@
   .gradient-yellow {
     @apply bg-gradient-to-t to-gradient-yellow-0 from-gradient-yellow-1;
   }
+  .card-container {
+    @apply shadow-shadow-card rounded-xl md:rounded-3xl bg-white w-[400px] md:w-max h-max pt-thin-lg md:pt-regular-lg pb-regular-lg sm:px-thin-lg md:p-bold-lg;
+  }
+  .thead {
+    @apply text-center bg-neutral-grayDark text-white border-2 md:border-4 border-white text-mob-tagline md:text-desk-tagline font-medium px-regular-md md:px-regular-lg py-thin-sm md:py-[6px] rounded-t-xl;
+  }
+  .td-class {
+    @apply py-thin-sm bg-neutral-white text-mob-tagline md:text-desk-tagline font-normal border-x-2 md:border-x-4 border-white;
+  }
 }
