@@ -9,7 +9,7 @@ const categories = [
   "Ready Mix",
   "Concrete Block",
   "Precast Concrete",
-  "Stenslag"
+  "Stenslag",
 ];
 
 export default function CategoryCard() {
@@ -60,12 +60,12 @@ export default function CategoryCard() {
       {/* Desktop Buttons */}
       <div className="hidden w-full z-10 md:flex gap-thin-lg">
         {categories.map((category) => (
-          <button className="w-full" key={category} onClick={() => setActiveCategory(category)}>
-            <CategoryButton
-              categoryName={category}
-              isActive={activeCategory === category}
-            />
-          </button>
+          <CategoryButton
+            key={category}
+            categoryName={category}
+            isActive={activeCategory === category}
+            onClick={() => setActiveCategory(category)}
+          />
         ))}
       </div>
     </div>
