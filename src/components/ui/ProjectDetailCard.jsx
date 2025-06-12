@@ -1,0 +1,53 @@
+export default function ProjectDetailCard() {
+  return (
+    <div className="flex flex-col md:flex-row gap-regular-sm md:gap-bold-sm w-full">
+      <div className="flex flex-col gap-thin-lg p-thin-lg bg-white md:w-[376px] rounded-xl shadow-shadow-card-small">
+        <div className="flex flex-col gap-thin-lg">
+          <div className="flex flex-col -space-y-thin-sm px-thin-lg md:px-regular-md">
+            <h4 className="text-mob-h4 font-medium">Detail Proyek</h4>
+            <p className="text-mob-h6 font-normal text-primary-red">
+              Saygon Inn & Cottage
+            </p>
+          </div>
+          <div className="border-space-gray" />
+        </div>
+        <div className="flex flex-col gap-thin-md px-thin-lg md:px-regular-md">
+          <div className="flex flex-col -space-y-thin-xs">
+            <p className="text-mob-tagline text-primary-red">Produk</p>
+            <h6 className="text-mob-h6 font-medium">Product 1 & Product 2</h6>
+          </div>
+          <div className="border-space-gray border-t-0" />
+          <div className="flex flex-col -space-y-thin-xs">
+            <p className="text-mob-tagline text-primary-red">Lokasi</p>
+            <h6 className="text-mob-h6 font-medium">Pasuruan, East Java</h6>
+          </div>
+          <div className="border-space-gray border-t-0" />
+          <div className="flex flex-col -space-y-thin-xs">
+            <p className="text-mob-tagline text-primary-red">Waktu Pengerjaan</p>
+            <h6 className="text-mob-h6 font-medium">7 Maret - 24 Juni</h6>
+          </div>
+          <div className="border-space-gray border-t-0" />
+        </div>
+      </div>
+      <div className="flex flex-col gap-thin-lg p-thin-lg w-full bg-white rounded-xl shadow-shadow-card-small">
+        <div className="flex flex-col gap-thin-lg">
+          <div className="flex flex-col -space-y-thin-sm px-thin-lg md:px-regular-md">
+            <h4 className="text-mob-h4 font-medium">Deskripsi Proyek</h4>
+            <p className="text-mob-h6 font-normal text-primary-red">
+              Saygon Inn & Cottage
+            </p>
+          </div>
+          <div className="border-space-gray" />
+        </div>
+        <div className="flex flex-col gap-thin-md px-thin-lg md:px-regular-md">
+          <p className="text-desc">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea
+            reiciendis neque ad consectetur tenetur hic quas itaque? Eos
+            doloremque modi qui, inventore itaque aliquam numquam veniam harum
+            quibusdam ducimus molestiae?
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
