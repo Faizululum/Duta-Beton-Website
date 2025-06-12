@@ -27,11 +27,15 @@ export default function ProjectPage() {
               </p>
             </div>
           </div>
-          <div className="w-full md:w-max flex md:flex-col justify-between">
-            <ProjectImage />
-            <ProjectImage />
-            <ProjectImage />
-            <ProjectImage />
+          <div className="md:overflow-y-scroll md:w-[230px] overflow-x-scroll w-full md:overflow-x-hidden md:h-[552px]">
+            <div className="w-max flex md:flex-col gap-thin-md md:gap-regular-sm">
+              <ProjectImage />
+              <ProjectImage />
+              <ProjectImage />
+              <ProjectImage />
+              <ProjectImage />
+              <ProjectImage />
+            </div>
           </div>
         </div>
         <ProjectDetailCard />
