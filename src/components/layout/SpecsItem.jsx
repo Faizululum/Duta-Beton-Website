@@ -22,7 +22,7 @@ export default function SpecsItem({
         variant="medium"
       />
       <SpecsTable {...specsProps} />
-      <div className="border-[1px] md:hidden border-neutral-grayLight opacity-20 w-full" />
+      <div className="border-space-gray" />
     </div>
   );
 }
