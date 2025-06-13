@@ -4,16 +4,7 @@ import { useState } from "react";
 import { Icon } from "@iconify/react";
 import CategoryButton from "./CategoryButton";
 
-const categories = [
-  "Semua Proyek",
-  "Ready Mix",
-  "Concrete Block",
-  "Precast Concrete",
-  "Stenslag",
-];
-
-export default function CategoryCard() {
-  const [activeCategory, setActiveCategory] = useState(categories[0]);
+export default function CategoryCard({ categories, activeCategory, setActiveCategory }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleSelect = (category) => {
