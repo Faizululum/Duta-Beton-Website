@@ -9,7 +9,7 @@ export default function CalcImage({ category }) {
         src={imageSrc}
         alt="calculator"
         fill
-        className="object-cover rounded-2xl"
+        className="object-cover rounded-2xl bg-neutral-white"
       />
     </div>
   );

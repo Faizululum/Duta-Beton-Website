@@ -11,7 +11,7 @@ export default function SpecsItem({
 
   return (
     <div
-      className={`flex flex-col md:flex-row${
+      className={`flex flex-col w-full md:flex-row${
         isRight ? "-reverse" : ""
       } gap-thin-lg md:gap-bold-3xl justify-center md:justify-start items-center`}
     >
@@ -22,7 +22,7 @@ export default function SpecsItem({
         variant="medium"
       />
       <SpecsTable {...specsProps} />
-      <div className="border-space-gray" />
+      <div className="border-space-gray md:hidden" />
     </div>
   );
 }

@@ -39,6 +39,6 @@
     @apply py-thin-sm bg-neutral-white text-mob-tagline md:text-desk-tagline font-normal border-x-2 md:border-x-4 border-white;
   }
   .border-space-gray {
-    @apply border-[1px] border-neutral-grayLight opacity-20 w-full
+    @apply border-[1px] border-neutral-grayLight opacity-20 w-full;
   }
 }

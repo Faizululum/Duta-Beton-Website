@@ -7,7 +7,7 @@ export default function ProjectImageSmall({ src }) {
         src={src}
         alt="project"
         fill
-        className="object-cover rounded-md md:rounded-lg"
+        className="bg-neutral-white object-cover rounded-md md:rounded-lg"
       />
     </div>
   );
@@ -20,7 +20,7 @@ export function ProjectImageLarge({ image, title, location }) {
         src={image}
         alt="project"
         fill
-        className="object-cover rounded-lg md:rounded-2xl"
+        className="bg-neutral-white object-cover rounded-lg md:rounded-2xl"
       />
       <div className="absolute rounded-lg md:rounded-2xl bottom-0 left-0 w-full h-full bg-gradient-to-t from-black/45 via-black/25 via-45% to-black/0 to-65% pointer-events-none" />
       <div className="flex flex-col absolute text-white w-full h-full justify-end px-thin-lg md:px-bold-sm py-thin-md md:py-regular-lg">
