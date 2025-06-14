@@ -4,8 +4,9 @@ export const projects = [
     slug: "saygon-inn",
     title: "Saygon Inn & Cottage",
     location: "Pasuruan, East Java",
-    product: "Ready Mix & Concrete Block",
-    period: "7 Maret - 24 Juni",
+    product: ["Ready Mix", "Concrete Block"],
+    periodStart: "2022-01-01",
+    periodEnd: "2022-12-31",
     description: "Deskripsi detail proyek Saygon Inn...",
     images: [
       "/hero.png",
