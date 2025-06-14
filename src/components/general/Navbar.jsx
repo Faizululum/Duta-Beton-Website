@@ -64,7 +64,7 @@ export default function Navbar() {
           </Link>
         ))}
         <Link href="/contact">
-          <Button label="Hubungi Kami" icon="phoneRed" variant="outline" />
+          <Button label="Hubungi Kami" icon="phoneRedFill" variant="outline" />
         </Link>
       </div>
 

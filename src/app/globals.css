@@ -6,7 +6,7 @@
 
 @layer components {
   .text-desc {
-    @apply text-mob-tagline md:text-desk-tagline font-normal text-gray-600;
+    @apply text-mob-tagline md:text-desk-tagline font-normal text-gray-500;
   }
   .space-text-section {
     @apply flex flex-col items-center justify-center gap-regular-lg md:gap-bold-lg w-full mb-bold-3xl;

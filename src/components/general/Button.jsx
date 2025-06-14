@@ -28,8 +28,8 @@ export default function Button({
 
   const variants = {
     filled: {
-      red: "bg-primary-red text-white",
-      yellow: "bg-secondary-yellow text-secondary-yellow",
+      red: "bg-primary-red border-2 border-primary-red text-white",
+      yellow: "bg-secondary-yellow border-2 border-secondary-yellow text-white",
     },
     outline: {
       red: "bg-transparent border-2 border-primary-red text-primary-red",
