@@ -4,9 +4,9 @@ import { useState } from "react";
 import Input from "../general/Input";
 
 export default function CalculatorCard({ category }) {
-  const [length, setLength] = useState(0);
-  const [width, setWidth] = useState(0);
-  const [height, setHeight] = useState(0);
+  const [length, setLength] = useState("");
+  const [width, setWidth] = useState("");
+  const [height, setHeight] = useState("");
 
   const blockArea = (10.5 * 21) / 100;
 
