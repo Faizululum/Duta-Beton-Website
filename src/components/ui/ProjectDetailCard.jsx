@@ -1,4 +1,4 @@
-export default function ProjectDetailCard({ title, product, location, period, description }) {
+export default function ProjectDetailCard({ title, product, location, periodStart, periodEnd, description }) {
   return (
     <div className="flex flex-col md:flex-row gap-regular-sm md:gap-bold-sm w-full">
       <div className="flex flex-col gap-thin-lg p-thin-lg bg-white md:w-[376px] rounded-xl shadow-shadow-card-small">
@@ -14,7 +14,7 @@ export default function ProjectDetailCard({ title, product, location, period, de
         <div className="flex flex-col gap-thin-md px-thin-lg md:px-regular-md">
           <div className="flex flex-col -space-y-thin-xs">
             <p className="text-mob-tagline text-primary-red">Produk</p>
-            <h6 className="text-mob-h6 font-medium">{product}</h6>
+            <h6 className="text-mob-h6 font-medium">{product.map((p) => p.replace("_", " ")).join(", ")}</h6>
           </div>
           <div className="border-space-gray border-t-0" />
           <div className="flex flex-col -space-y-thin-xs">
@@ -24,7 +24,7 @@ export default function ProjectDetailCard({ title, product, location, period, de
           <div className="border-space-gray border-t-0" />
           <div className="flex flex-col -space-y-thin-xs">
             <p className="text-mob-tagline text-primary-red">Waktu Pengerjaan</p>
-            <h6 className="text-mob-h6 font-medium">{period}</h6>
+            <h6 className="text-mob-h6 font-medium">{new Date(periodStart).toLocaleDateString()} - {new Date(periodEnd).toLocaleDateString()}</h6>
           </div>
           <div className="border-space-gray border-t-0" />
         </div>

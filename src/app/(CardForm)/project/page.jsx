@@ -4,6 +4,7 @@ import TitleLayout from "@/components/layout/TextLayout";
 import CategoryCard from "@/components/ui/CategoryCard";
 import ProjectCard from "@/components/ui/ProjectCard";
 import { useState } from "react";
+import { projects } from "@/lib/data/projects";
 
 const categories = [
   "Semua Proyek",
@@ -11,19 +12,6 @@ const categories = [
   "Concrete Block",
   "Precast Concrete",
   "Stenslag",
-];
-
-const projects = [
-  {
-    id: 1,
-    slug: "saygon-inn",
-    title: "Saygon Inn & Cottage",
-    location: "Pasuruan, East Java",
-    product: "Ready Mix & Concrete Block",
-    period: "7 Maret - 24 Juni",
-    description: "Deskripsi detail proyek Saygon Inn...",
-    images: ["/hero.png", "/hero.png", "/hero.png", "/hero.png", "/hero.png"],
-  },
 ];
 
 export default function ProjectDetailPage() {
