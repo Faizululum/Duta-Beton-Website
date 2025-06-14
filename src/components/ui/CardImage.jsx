@@ -28,7 +28,7 @@ export default function CardImage({
         src={src}
         alt={alt}
         fill
-        className="rounded-3xl object-cover relative z-10 shadow-shadow-card-large"
+        className="rounded-3xl bg-neutral-white object-cover relative z-10 shadow-shadow-card-large"
         sizes={imageSizes}
       />
     </div>
