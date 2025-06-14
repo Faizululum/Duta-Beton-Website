@@ -6,7 +6,7 @@ export default function SpecsTable({
   colors = [],
   tableHeader = [],
   tableData = [],
-  imageSrc,
+  patternSrc,
   perMeterNote,
 }) {
   const isRight = variant === "right";
@@ -15,7 +15,7 @@ export default function SpecsTable({
   const textAlign = isRight ? "justify-end" : "justify-start";
 
   return (
-    <div className={`flex flex-col gap-thin-sm ${alignment}`}>
+    <div className={`flex flex-col w-full md:w-max gap-thin-sm ${alignment}`}>
       <h4 className="text-mob-h5 md:text-desk-h5 font-medium text-black">
         {title}
       </h4>
@@ -53,7 +53,9 @@ export default function SpecsTable({
             <thead>
               <tr>
                 {tableHeader.map((header, idx) => (
-                  <th key={idx} className="thead">{header}</th>
+                  <th key={idx} className="thead">
+                    {header}
+                  </th>
                 ))}
               </tr>
             </thead>
@@ -61,20 +63,24 @@ export default function SpecsTable({
               {tableData.map((row, idx) => (
                 <tr key={idx}>
                   {tableHeader.map((key, i) => (
-                    <td key={i} className="td-class">{row[key.toLowerCase()]}</td>
+                    <td key={i} className="td-class">
+                      {row[key.toLowerCase()]}
+                    </td>
                   ))}
                 </tr>
               ))}
             </tbody>
           </table>
-          <div className="flex flex-col items-center gap-thin-md">
-            <div className="w-[64px] md:w-[112px] h-[64px] md:h-[112px] relative">
-              <Image src={imageSrc} alt="Pattern" fill />
+          {patternSrc && (
+            <div className="flex flex-col items-center gap-thin-md">
+              <div className="w-[64px] md:w-[112px] h-[64px] md:h-[112px] relative">
+                <Image src={patternSrc} alt="Pattern" fill />
+              </div>
+              <p className="text-mob-tagline md:text-desk-tagline font-normal">
+                {perMeterNote} pcs/m²
+              </p>
             </div>
-            <p className="text-mob-tagline md:text-desk-tagline font-normal">
-              {perMeterNote} pcs/m²
-            </p>
-          </div>
+          )}
         </div>
       </div>
     </div>
