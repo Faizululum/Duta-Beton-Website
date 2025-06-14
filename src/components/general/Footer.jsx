@@ -57,7 +57,9 @@ export default function Footer() {
         </div>
         <div className="flex w-full md:w-[500px] justify-between">
           <div className="flex flex-col gap-thin-xs md:gap-thin-lg">
-            <span className="text-mob-tagline md:text-desk-tagline font-bold">Menu</span>
+            <span className="text-mob-tagline md:text-desk-tagline font-bold">
+              Menu
+            </span>
             <ul className="space-y-thin-xs md:space-y-thin-md text-mob-tiny md:text-desk-tiny font-light">
               {menu.map((item) => (
                 <li key={item}>{item}</li>
@@ -65,7 +67,9 @@ export default function Footer() {
             </ul>
           </div>
           <div className="flex flex-col gap-thin-xs md:gap-thin-lg">
-            <span className="text-mob-tagline md:text-desk-tagline font-bold">Produk Kami</span>
+            <span className="text-mob-tagline md:text-desk-tagline font-bold">
+              Produk Kami
+            </span>
             <div className="flex flex-col gap-thin-xs md:gap-1 text-mob-tiny md:text-desk-tiny font-light -ml-1">
               <div className="flex items-center">
                 <Icon
@@ -102,24 +106,35 @@ export default function Footer() {
             </div>
           </div>
           <div className="flex flex-col gap-thin-xs md:gap-thin-lg">
-            <span className="text-mob-tagline md:text-desk-tagline font-bold">Social Media</span>
+            <span className="text-mob-tagline md:text-desk-tagline font-bold">
+              Social Media
+            </span>
             <div className="flex flex-col gap-thin-xs md:gap-1 text-mob-tiny md:text-desk-tiny font-normal">
               <div className="flex items-center gap-1">
-                <Icon icon="mdi:linkedin"
+                <Icon
+                  icon="mdi:linkedin"
                   className="w-regular-md h-regular-md md:w-regular-lg md:h-regular-lg"
-                  aria-hidden="true" />
+                  aria-hidden="true"
+                />
                 <p>dutabeton</p>
               </div>
               <div className="flex items-center gap-1">
-                <Icon icon="mdi:instagram"
+                <Icon
+                  icon="mdi:instagram"
                   className="w-regular-md h-regular-md md:w-regular-lg md:h-regular-lg"
-                  aria-hidden="true" />
+                  aria-hidden="true"
+                />
                 <p>@dutabetonmandiri</p>
               </div>
             </div>
           </div>
         </div>
-        <div className="w-full md:w-[335px] h-[212px] bg-secondary-yellow" />
+        <div className="w-full md:w-[335px] h-[212px]">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5688.91517588073!2d112.7327684334812!3d-7.729874225412678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7d13f22105d89%3A0x5e78e0ed6b6f1d42!2sPT.%20Duta%20Beton%20Mandiri!5e0!3m2!1sen!2sid!4v1749865387377!5m2!1sen!2sid"
+            className="w-full h-full rounded-xl"
+          />
+        </div>
       </div>
       <div className="border-2 border-white w-full" />
     </footer>
