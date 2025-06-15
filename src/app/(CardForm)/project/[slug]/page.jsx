@@ -3,11 +3,11 @@ import ProjectDetailCard from "@/components/ui/ProjectDetailCard";
 import ProjectImageSmall from "@/components/ui/ProjectImage";
 import { ProjectImageLarge } from "@/components/ui/ProjectImage";
 
-export default async function ProjectPage({ params }) {
+export default async function ProjectDetailPage({ params }) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/${params.slug}`,
     {
-      cache: "no-cache",
+      cache: "no-store",
     }
   );
 
