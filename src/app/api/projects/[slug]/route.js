@@ -62,3 +62,15 @@ export async function PUT(req, { params }) {
     );
   }
 }
+
+export async function DELETE(req, { params }) {
+  try {
+    const deleted = await prisma.project.delete({
+      where: { slug: params.slug },
+    });
+    return NextResponse.json({ success: true, deleted });
+  } catch (err) {
+    console.error(err);
+    return NextResponse.json({ error: "Failed to delete project" }, { status: 500 });
+  }
+}

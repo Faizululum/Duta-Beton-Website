@@ -182,6 +182,24 @@ export default function AdminEditProject() {
           </div>
           <div className="grid grid-cols-2 gap-thin-md">
             <button
+              type="button"
+              className="flex items-center justify-center gap-thin-sm bg-red-500 text-white py-2 px-4 rounded-xl"
+              onClick={async () => {
+                const confirmDelete = confirm(
+                  "Yakin ingin menghapus proyek ini?"
+                );
+                if (!confirmDelete) return;
+                const res = await fetch(`/api/projects/${slug}`, {
+                  method: "DELETE",
+                });
+                if (res.ok) router.push("/admin/project");
+                else alert("Gagal menghapus proyek");
+              }}
+            >
+              <Icon icon="fe:trash" width="24" height="24" />
+              Hapus
+            </button>
+            <button
               type="submit"
               className="flex items-center justify-center gap-thin-sm bg-green-500 text-white py-2 px-4 rounded-xl"
             >
