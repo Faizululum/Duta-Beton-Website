@@ -5,7 +5,7 @@ export default function HomeHero() {
   return (
     <div className="relative md:p-bold-4xl h-screen w-full">
       <Image
-        src="/hero.png"
+        src="/hero_2.jpg"
         alt="hero"
         fill
         priority
