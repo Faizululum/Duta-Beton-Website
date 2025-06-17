@@ -14,6 +14,7 @@ export default function AboutHero() {
           variant: "filled",
           color: "red",
         }}
+        href="/contact"
       />
       <div className="relative w-[375px] h-[281px] md:w-[600px] md:h-[458px]">
         <Image

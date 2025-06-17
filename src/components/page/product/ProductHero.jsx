@@ -14,6 +14,7 @@ export default function ProductHero() {
           variant: "filled",
           color: "red",
         }}
+        href="/contact"
       />
       <CardImage src="/product/product_hero_1.png" alt="hero" align="right" variant="medium" />
     </div>

@@ -16,7 +16,6 @@ export default function Button({
   color = "red",       // 'red', 'gray'
   icon = "arrowRed",   // 'arrowRed', 'phoneRed'
   justify = "between", // 'between', 'center'
-  onClick,
 }) {
   const base = clsx(
     "flex w-full items-center gap-1 md:gap-2 rounded-full font-medium text-mob-tagline md:text-desk-tagline pr-thin-xs md:pr-1 pl-thin-md md:pl-3 py-thin-xs md:py-1 transition",
@@ -45,10 +44,9 @@ export default function Button({
   const classes = clsx(base, variants[variant][color]);
 
   return (
-    <button
+    <div
       className={classes}
       disabled={variant === "disabled"}
-      onClick={onClick}
     >
       {label}
       {icon && (
@@ -61,6 +59,6 @@ export default function Button({
           />
         </div>
       )}
-    </button>
+    </div>
   );
 }

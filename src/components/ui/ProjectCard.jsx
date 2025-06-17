@@ -20,7 +20,7 @@ export default function ProjectCard({
         </div>
         <div className="flex w-full items-center justify-between">
           <div className="flex flex-col -space-y-thin-sm">
-            <h4 className="text-desk-tagline font-bold">{title}</h4>
+            <h4 className="text-desk-tagline font-medium">{title}</h4>
             <p className="text-desk-tiny font-normal text-primary-red">
               {location}
             </p>

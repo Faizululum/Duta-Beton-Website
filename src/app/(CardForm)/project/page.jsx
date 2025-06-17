@@ -46,7 +46,7 @@ export default function ProjectPage() {
       <h1 className="text-mob-h2 md:text-mob-h2 font-bold text-white">
         Proyek
       </h1>
-      <div className="flex flex-col md:w-[1256px] gap-regular-sm md:gap-bold-sm card-container p-thin-lg md:p-bold-lg md:pt-regular-lg pb-regular-lg">
+      <div className="flex flex-col md:w-[1256px] min-h-[430px] md:min-h-[525px] gap-regular-sm md:gap-bold-sm card-container p-thin-lg md:p-bold-lg md:pt-regular-lg pb-regular-lg">
         <div className="flex flex-col gap-thin-lg md:gap-regular-lg">
           <TitleLayout title="Proyek Telah Selesai" />
           <CategoryCard
@@ -56,7 +56,7 @@ export default function ProjectPage() {
           />
         </div>
         {loading ? (
-          <p className="text-desc">Loading proyek...</p>
+          <p className="text-desc">Memuat proyek...</p>
         ) : (
           <div className="w-full flex flex-col md:grid md:grid-cols-3 gap-thin-lg md:gap-regular-sm flex-wrap">
             {filteredProjects.map((project, index) => (
