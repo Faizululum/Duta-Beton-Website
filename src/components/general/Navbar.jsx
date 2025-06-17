@@ -40,8 +40,8 @@ export default function Navbar() {
   }, [isOpen]);
 
   const getLinkClass = (href) => {
-    const isActive = pathname === href;
-    return `text-base ${
+    const isActive = pathname === href || pathname.includes(href);
+    return `text-base hover-red ${
       isActive ? "font-medium text-primary-red" : "text-gray-700"
     }`;
   };

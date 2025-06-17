@@ -41,4 +41,7 @@
   .border-space-gray {
     @apply border-[1px] border-neutral-grayLight opacity-20 w-full;
   }
+  .hover-red {
+    @apply hover:text-primary-red transition-all duration-100;
+  }
 }
