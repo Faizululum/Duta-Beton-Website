@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Button from "../general/Button";
 import TitleLayout, { BodyLayout } from "../layout/TextLayout";
 import CardImage from "../ui/CardImage";
@@ -24,9 +25,9 @@ export default function AboutSection() {
               melaksanakan Sistem Manajemen K3."
             />
           </div>
-          <div className="w-max">
+          <Link href="/contact" className="w-max">
             <Button label="Hubungi Kami" color="red" variant="outline" />
-          </div>
+          </Link>
         </div>
       </div>
       <div className="flex w-full justify-end">

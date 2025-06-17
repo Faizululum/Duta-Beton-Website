@@ -24,6 +24,7 @@ export default function HomeHero() {
             variant: "outline",
             color: "white",
           }}
+          href="/product/ready-mix"
         />
       </div>
     </div>

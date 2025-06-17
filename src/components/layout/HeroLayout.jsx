@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Button from "../general/Button";
 
 export default function HeroLayout({
@@ -11,6 +12,7 @@ export default function HeroLayout({
     variant: "outline",
     color: "white",
   },
+  href = "/contact",
 }) {
   return (
     <div className="flex flex-col items-start w-full p-bold-sm md:p-0 md:w-[558px] gap-regular-sm md:gap-regular-lg">
@@ -26,7 +28,9 @@ export default function HeroLayout({
         </div>
       </div>
       <div>
-        <Button {...buttonProps} />
+        <Link href={`${href}`}>
+          <Button {...buttonProps} />
+        </Link>
       </div>
     </div>
   );
