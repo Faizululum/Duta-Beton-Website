@@ -2,6 +2,7 @@ import Button from "@/components/general/Button";
 import TitleLayout, { BodyLayout } from "@/components/layout/TextLayout";
 import CardImage from "@/components/ui/CardImage";
 import CertifiedCard from "@/components/ui/CertifiedCard";
+import Link from "next/link";
 
 export default function AboutProductSection() {
   return (
@@ -16,9 +17,14 @@ export default function AboutProductSection() {
               description="Readymix sangat disukai konsumen dibandingkan cara dan bahan lainnya seperti molen portable, karena biaya, waktu dan kegunaannya yang luas, mulai dari pondasi dak, jalan raya sampai kepada gedung yang bertingkat seperti ruko, mall dan apartment.Readymix adalah beton yang secara spesifik dan dicampur atau diproduksi untuk proyek konstruksi sesuai mutu yang dipesan. Bahan yang dicampur adalah semen Portland, air dan agregat (pasir, kerikil, atau batu-batuan yang hancur).Readymix ini, biasa dipesan dengan volume per kubik (m3)."
             />
           </div>
-          <div className="w-max">
-            <Button label="Hubungi Kami" color="red" variant="outline" />
-          </div>
+          <Link href="/contact" className="w-max">
+            <Button
+              label="Hubungi Kami"
+              icon="phoneRed"
+              color="red"
+              variant="outline"
+            />
+          </Link>
         </div>
       </div>
       <div className="flex w-full justify-end">

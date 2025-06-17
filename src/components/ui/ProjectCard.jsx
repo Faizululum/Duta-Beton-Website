@@ -1,12 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ProjectCard({
-  title,
-  location,
-  images,
-  slug,
-}) {
+export default function ProjectCard({ title, location, images, slug }) {
   return (
     <div className="w-[376px] shadow-shadow-card-small p-regular-md bg-white border-2 border-neutral-white rounded-xl">
       <div className="flex flex-col gap-thin-md">
@@ -25,8 +20,19 @@ export default function ProjectCard({
               {location}
             </p>
           </div>
-          <Link href={`/project/${slug}`} className="w-bold-sm h-bold-sm relative">
-            <Image src="/icons/arrow_red.svg" alt="arrow" fill />
+          <Link href={`/project/${slug}`} className="group relative w-8 h-8">
+            <Image
+              src="/icons/arrow_red_outline.svg"
+              alt="arrow"
+              fill
+              className="transition-opacity opacity-100 group-hover:opacity-0"
+            />
+            <Image
+              src="/icons/arrow_red.svg"
+              alt="arrow-hover"
+              fill
+              className="transition-opacity opacity-0 group-hover:opacity-100"
+            />
           </Link>
         </div>
       </div>

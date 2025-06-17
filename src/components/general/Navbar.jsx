@@ -106,7 +106,12 @@ export default function Navbar() {
             </Link>
           ))}
           <Link href="/contact" onClick={() => setIsOpen(false)}>
-            <Button label="Hubungi Kami" color="red" icon="phoneRedFill" variant="outline" />
+            <Button
+              label="Hubungi Kami"
+              color="red"
+              icon="phoneRed"
+              variant="outline"
+            />
           </Link>
         </div>
       </div>

@@ -44,8 +44,9 @@ export default function ContactCard() {
         <Button
           label="Kirim Pesan"
           color="red"
-          icon="arrowRedOutline"
+          icon="arrowRed"
           justify="center"
+          variant="outline"
         />
         <div className="border-space-gray" />
         <ContactInfo />

@@ -20,7 +20,7 @@ export default function HomeHero() {
           textColor="text-white"
           buttonProps={{
             label: "Lihat Produk",
-            icon: "arrowRedOutline",
+            icon: "arrowWhite",
             variant: "outline",
             color: "white",
           }}
