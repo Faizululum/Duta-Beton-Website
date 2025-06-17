@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcryptjs";
-import { cookies } from "next/headers";
 
 const prisma = new PrismaClient();
 
@@ -18,8 +17,14 @@ export async function POST(req) {
     return NextResponse.json({ error: "Password salah" }, { status: 401 });
   }
 
-  // Simpan cookie sederhana
-  cookies().set("admin-token", "bolehmasuk", { path: "/", httpOnly: true });
+  const res = NextResponse.json({ message: "Login sukses" });
 
-  return NextResponse.json({ message: "Login sukses" });
+  res.cookies.set("admin-token", "bolehmasuk", {
+    path: "/",
+    httpOnly: true,
+    maxAge: 60 * 60 * 24,
+    sameSite: "strict",
+  });
+
+  return res;
 }
