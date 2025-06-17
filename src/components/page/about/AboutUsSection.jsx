@@ -28,8 +28,8 @@ export default function AboutUsSection() {
               <Button
                 label="Hubungi Kami"
                 color="red"
-                variant="filled"
-                icon="phoneRedOutline"
+                variant="outline"
+                icon="phoneRed"
               />
             </Link>
           </div>

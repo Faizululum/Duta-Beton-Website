@@ -20,7 +20,12 @@ export default function ProductCard() {
           </p>
         </div>
         <div className="w-full flex justify-center">
-          <Button label="Lihat Produk" color="yellow" icon="arrowYellowFill" variant="outline" />
+          <Button
+            label="Lihat Produk"
+            color="yellow"
+            icon="arrowYellow"
+            variant="outline"
+          />
         </div>
       </div>
     </div>

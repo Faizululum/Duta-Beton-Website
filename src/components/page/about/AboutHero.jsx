@@ -10,8 +10,8 @@ export default function AboutHero() {
         textColor="text-black"
         buttonProps={{
           label: "Hubungi Kami",
-          icon: "phoneRedOutline",
-          variant: "filled",
+          icon: "phoneRed",
+          variant: "outline",
           color: "red",
         }}
         href="/contact"

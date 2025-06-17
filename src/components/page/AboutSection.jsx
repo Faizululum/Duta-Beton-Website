@@ -25,8 +25,13 @@ export default function AboutSection() {
               melaksanakan Sistem Manajemen K3."
             />
           </div>
-          <Link href="/contact" className="w-max">
-            <Button label="Hubungi Kami" color="red" variant="outline" />
+          <Link href="/about" className="w-max">
+            <Button
+              label="Selengkapnya"
+              color="red"
+              icon="arrowRed"
+              variant="outline"
+            />
           </Link>
         </div>
       </div>

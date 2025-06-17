@@ -6,6 +6,7 @@ import TitleLayout from "@/components/layout/TextLayout";
 import CalcImage from "@/components/ui/CalcImage";
 import CalculatorCard from "@/components/ui/CalculatorCard";
 import CategoryCard from "@/components/ui/CategoryCard";
+import Link from "next/link";
 
 const categories = ["Ready Mix", "Concrete Block"];
 
@@ -14,7 +15,9 @@ export default function CalculatorPage() {
 
   return (
     <div className="flex flex-col items-center gap-bold-lg">
-      <h1 className="text-mob-h2 md:text-mob-h2 font-bold text-white">Kalkulator</h1>
+      <h1 className="text-mob-h2 md:text-mob-h2 font-bold text-white">
+        Kalkulator
+      </h1>
       <div className="flex flex-col items-center gap-bold-sm md:gap-bold-lg">
         <div className="card-container flex flex-col md:w-[1256px] gap-regular-sm md:gap-bold-sm p-thin-lg md:p-bold-lg md:pt-regular-lg pb-regular-lg">
           <div className="flex flex-col gap-thin-lg md:gap-regular-lg">
@@ -36,18 +39,19 @@ export default function CalculatorPage() {
             <div className="flex flex-col gap-thin-sm text-center md:text-left">
               <h5 className="text-mob-h5 font-medium">Pahami kebutuhan Anda</h5>
               <p className="text-desc">
-                Kami akan menghubungi Anda secara langsung untuk mendapatkan bantuan
+                Kami akan menghubungi Anda secara langsung untuk mendapatkan
+                bantuan
               </p>
             </div>
-            <div className="w-full md:w-max h-max">
+            <Link href="/contact" className="w-full md:w-max h-max">
               <Button
                 label="Hubungi Kami"
                 color="red"
-                icon="arrowRedOutline"
-                variant="filled"
+                icon="phoneRed"
+                variant="outline"
                 justify="center"
               />
-            </div>
+            </Link>
           </div>
         </div>
       </div>

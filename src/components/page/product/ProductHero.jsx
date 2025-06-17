@@ -10,13 +10,18 @@ export default function ProductHero() {
         textColor="text-black"
         buttonProps={{
           label: "Hubungi Kami",
-          icon: "phoneRedOutline",
-          variant: "filled",
+          icon: "phoneRed",
+          variant: "outline",
           color: "red",
         }}
         href="/contact"
       />
-      <CardImage src="/product/product_hero_1.png" alt="hero" align="right" variant="medium" />
+      <CardImage
+        src="/product/product_hero_1.png"
+        alt="hero"
+        align="right"
+        variant="medium"
+      />
     </div>
   );
 }
