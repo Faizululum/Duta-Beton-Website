@@ -6,6 +6,7 @@ import slugify from "slugify";
 import { UploadDropzone } from "@/lib/uploadthing";
 import { Icon } from "@iconify/react";
 import ConfirmModal from "@/components/general/ConfirmModal";
+import toast from "react-hot-toast";
 
 export default function AdminEditProject() {
   const router = useRouter();
@@ -53,10 +54,11 @@ export default function AdminEditProject() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
     });
-    if (res.ok) router.push("/admin/project");
-    else {
-      const data = await res.json();
-      setErrors(data.errors || { general: data.error });
+    if (res.ok) {
+      toast.success("Proyek berhasil diperbarui!");
+      router.push("/admin/project");
+    } else {
+      toast.error("Gagal memperbarui proyek");
     }
   };
 
@@ -208,10 +210,11 @@ export default function AdminEditProject() {
               method: "DELETE",
             });
             if (res.ok) {
+              toast.success("Proyek berhasil dihapus");
               setShowModal(false);
               router.push("/admin/project");
             } else {
-              alert("Gagal menghapus proyek");
+              toast.error("Gagal menghapus proyek");
             }
           }}
         />

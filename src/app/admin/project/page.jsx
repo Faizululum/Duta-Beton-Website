@@ -4,9 +4,16 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
+import { useRouter } from "next/navigation";
 
 export default function AdminProjectPage() {
   const [projects, setProjects] = useState([]);
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    await fetch("/api/admin/logout", { method: "POST" });
+    router.push("/admin/login");
+  };
 
   useEffect(() => {
     fetch("/api/projects")
@@ -25,6 +32,12 @@ export default function AdminProjectPage() {
             Tambah Proyek
           </div>
         </Link>
+        <button
+          onClick={handleLogout}
+          className="bg-red-600 text-white px-4 py-2 rounded"
+        >
+          Logout
+        </button>
       </div>
       <table className="w-full table-auto border border-gray-300">
         <thead>
