@@ -6,7 +6,7 @@ export default function TestimonialSection() {
   return (
     <div className="relative space-text-section h-max w-full py-regular-lg overflow-x-clip">
       <Image
-        src="/brick_white.jpg"
+        src="/testimonial/brick_white.jpg"
         alt="brick"
         fill
         priority
