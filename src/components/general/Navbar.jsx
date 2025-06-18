@@ -6,9 +6,11 @@ import { usePathname } from "next/navigation";
 import Button from "./Button";
 import Logo from "../ui/Logo";
 import { Icon } from "@iconify/react";
+import clsx from "clsx";
 
-export default function Navbar() {
+export default function Navbar({ variant = "default" }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
   const sidebarRef = useRef();
 
@@ -39,15 +41,36 @@ export default function Navbar() {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    if (variant !== "transparent") return;
+
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [variant]);
+
   const getLinkClass = (href) => {
-    const isActive = pathname === href || pathname.includes(href);
+    const isActive =
+      href === "/" ? pathname === "/" : pathname.startsWith(href);
     return `text-base hover-red ${
-      isActive ? "font-medium text-primary-red" : "text-gray-700"
+      isActive ? "font-medium text-primary-red" : ""
     }`;
   };
 
   return (
-    <nav className="w-full h-[72px] md:h-[100px] flex justify-between items-center px-6 md:px-20 font-roboto font-normal fixed drop-shadow-md bg-white z-50">
+    <nav
+      className={clsx(
+        "w-full h-[72px] md:h-[100px] flex justify-between items-center px-6 md:px-20 font-roboto font-normal fixed z-50 transition-all duration-300",
+        {
+          "bg-white drop-shadow-md text-gray-700":
+            variant === "default" || isScrolled,
+          "bg-transparent text-white": variant === "transparent" && !isScrolled,
+        }
+      )}
+    >
       <Link href="/">
         <Logo />
       </Link>
@@ -64,7 +87,16 @@ export default function Navbar() {
           </Link>
         ))}
         <Link href="/contact">
-          <Button label="Hubungi Kami" icon="phoneRedFill" variant="outline" />
+          <Button
+            label="Hubungi Kami"
+            icon={
+              variant === "transparent" && !isScrolled
+                ? "phoneWhite"
+                : "phoneRed"
+            }
+            variant="outline"
+            color={variant === "transparent" && !isScrolled ? "white" : "red"}
+          />
         </Link>
       </div>
 
@@ -74,7 +106,12 @@ export default function Navbar() {
         className="md:hidden"
         onClick={() => setIsOpen(true)}
       >
-        <Icon icon="gg:menu-right" width="24" height="24" />
+        <Icon
+          icon="gg:menu-right"
+          width="24"
+          height="24"
+          color={variant === "transparent" && !isScrolled ? "white" : "#222"}
+        />
       </button>
 
       {/* Mobile Sidebar Backdrop */}
