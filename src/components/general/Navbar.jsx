@@ -13,11 +13,22 @@ export default function Navbar({ variant = "default" }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
   const sidebarRef = useRef();
+  const [isProductDropdownOpen, setIsProductDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   const navLinks = [
     { label: "Beranda", href: "/" },
     { label: "Tentang", href: "/about" },
-    { label: "Produk", href: "/product" },
+    {
+      label: "Produk",
+      href: "/product",
+      dropdown: [
+        { label: "Ready Mix", href: "/product/ready-mix" },
+        { label: "Concrete Block", href: "/product/concrete-block" },
+        { label: "Precast Concrete", href: "/product/precast-concrete" },
+        { label: "Stenslag", href: "/product/stenslag" },
+      ],
+    },
     { label: "Proyek", href: "/project" },
     { label: "Kalkulator", href: "/calculator" },
   ];
@@ -60,6 +71,14 @@ export default function Navbar({ variant = "default" }) {
     }`;
   };
 
+  const getDropdownItemClass = (href) => {
+    const isActive = pathname === href;
+    return clsx(
+      "text-sm hover-red",
+      isActive ? "text-primary-red font-medium" : "text-gray-700"
+    );
+  };
+
   return (
     <nav
       className={clsx(
@@ -67,7 +86,8 @@ export default function Navbar({ variant = "default" }) {
         {
           "bg-white drop-shadow-md text-gray-700":
             variant === "default" || isScrolled,
-          "bg-transparent text-white": variant === "transparent" && !isScrolled,
+          "bg-transparent text-gray-700 md:text-white":
+            variant === "transparent" && !isScrolled,
         }
       )}
     >
@@ -77,15 +97,46 @@ export default function Navbar({ variant = "default" }) {
 
       {/* Desktop Menu */}
       <div className="hidden md:flex flex-row text-desk-tagline gap-10 items-center">
-        {navLinks.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            className={getLinkClass(link.href)}
-          >
-            {link.label}
-          </Link>
-        ))}
+        {navLinks.map((link) =>
+          link.dropdown ? (
+            <div key={link.label} className="relative group">
+              <button
+                className={clsx("text-base hover-red flex gap-thin-xs items-center", {
+                  "text-primary-red font-medium":
+                    pathname.startsWith("/product"),
+                })}
+              >
+                {link.label}
+                <Icon
+                  icon="mdi:chevron-down"
+                  className="w-regular-md h-regular-md md:w-regular-md md:h-regular-md -mr-thin-lg"
+                  aria-hidden="true"
+                />
+              </button>
+              <div className="absolute top-full -left-4 mt-2 w-48 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-50">
+                {link.dropdown.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`block px-4 py-2 text-sm text-gray-700 ${getDropdownItemClass(
+                      item.href
+                    )}`}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={getLinkClass(link.href)}
+            >
+              {link.label}
+            </Link>
+          )
+        )}
         <Link href="/contact">
           <Button
             label="Hubungi Kami"
@@ -132,16 +183,70 @@ export default function Navbar({ variant = "default" }) {
           </button>
         </div>
         <div className="flex flex-col h-full gap-6 px-6 py-4">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setIsOpen(false)}
-              className={getLinkClass(link.href)}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            if (link.dropdown) {
+              return (
+                <div key={link.label}>
+                  <button
+                    onClick={() => setIsProductDropdownOpen((prev) => !prev)}
+                    className={`text-base text-gray-700 flex justify-between items-center w-full ${getLinkClass(
+                      link.href
+                    )}`}
+                  >
+                    {link.label}
+                    <Icon
+                      icon={
+                        isProductDropdownOpen
+                          ? "mdi:chevron-up"
+                          : "mdi:chevron-down"
+                      }
+                      className="ml-2"
+                    />
+                  </button>
+
+                  {/* Dropdown list with animasi */}
+                  <div
+                    ref={dropdownRef}
+                    className=" duration-300 ease-in-out overflow-hidden -mb-3 pt-3 ml-2 flex flex-col gap-2"
+                    style={{
+                      height: isProductDropdownOpen
+                        ? `${dropdownRef.current?.scrollHeight}px`
+                        : "0px",
+                    }}
+                  >
+                    {link.dropdown.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => setIsOpen(false)}
+                        className={`flex items-center ${getDropdownItemClass(
+                          item.href
+                        )}`}
+                      >
+                        <Icon
+                          icon="basil:caret-right-outline"
+                          className="w-regular-md h-regular-md md:w-regular-lg md:h-regular-lg"
+                          aria-hidden="true"
+                        />
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            }
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className={getLinkClass(link.href)}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+
           <Link href="/contact" onClick={() => setIsOpen(false)}>
             <Button
               label="Hubungi Kami"
