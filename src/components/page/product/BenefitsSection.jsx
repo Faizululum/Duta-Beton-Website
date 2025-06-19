@@ -2,10 +2,10 @@ import TitleLayout from "@/components/layout/TextLayout";
 import BenefitCard from "@/components/ui/BenefitCard";
 import Image from "next/image";
 
-export default function BenefitsSection() {
+export default function BenefitsSection({ title }) {
   return (
     <div className="flex flex-col w-full gap-regular-lg md:gap-bold-lg mb-bold-3xl relative">
-      <TitleLayout title="Keuntungan" description="Concrete Block" />
+      <TitleLayout title="Keuntungan" description={title.title} />
       <div className="w-[400px] md:w-[960px] h-[600px] bg-primary-red rounded-r-full p-regular-lg pl-0 md:relative">
         <div className="bg-primary-red border-[10px] border-l-0 border-white rounded-r-full flex items-center h-full">
           <div className="relative ml-[230px] hidden md:block w-[715px] h-[440px]">

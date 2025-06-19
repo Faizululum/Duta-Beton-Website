@@ -6,18 +6,19 @@ import { notFound } from "next/navigation";
 import { allSpecsData } from "@/lib/data/specsData";
 import BenefitsSection from "@/components/page/product/BenefitsSection";
 
-export default function ProductPage({ params }) {
-  const data = productData[params.slug];
-  const specsData = allSpecsData[params.slug];
+export default async function ProductPage({ params }) {
+  const slug = await params.slug;
+  const data = productData[slug];
+  const specsData = allSpecsData[slug];
 
-  if (!data) return notFound();
+  if (!data || !specsData) return notFound();
 
   return (
     <>
       <ProductHero data={data.hero} />
       <AboutProductSection data={data.about} />
-      <BenefitsSection />
-      <SpecsSection data={specsData} />
+      <BenefitsSection title={data.hero} />
+      <SpecsSection data={specsData} title={data.hero} />
     </>
   );
 }
