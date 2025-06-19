@@ -13,7 +13,7 @@ export default function SpecsItem({
     <div
       className={`flex flex-col w-full md:flex-row${
         isRight ? "-reverse" : ""
-      } gap-thin-lg md:gap-bold-3xl justify-center md:justify-start items-center`}
+      } gap-thin-lg md:gap-bold-3xl justify-center md:justify-start items-center mb-regular-lg`}
     >
       <CardImage
         src={imageSrc}

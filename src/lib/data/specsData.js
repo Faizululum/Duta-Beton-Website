@@ -370,9 +370,33 @@ export const specsDataPrecast = [
     tableData: [
       {
         cover: "30 (42)",
-        tebal: "8, 10",
-        lebar: "42",
-        panjang: "60, 120",
+        tebal: "8, 10 cm",
+        lebar: "42 cm",
+        panjang: "60, 120 cm",
+      },
+      {
+        cover: "30 (46)",
+        tebal: "8, 10 cm",
+        lebar: "46 cm",
+        panjang: "60, 120 cm",
+      },
+      {
+        cover: "40 (55)",
+        tebal: "8, 10, 12 cm",
+        lebar: "55 cm",
+        panjang: "60, 120 cm",
+      },
+      {
+        cover: "50 (66)",
+        tebal: "8, 10, 12, 15 cm",
+        lebar: "66 cm",
+        panjang: "60, 120 cm",
+      },
+      {
+        cover: "60 (72)",
+        tebal: "10, 12, 15 cm",
+        lebar: "72 cm",
+        panjang: "60, 120 cm",
       },
     ],
     patternSrc: "",
@@ -383,4 +407,6 @@ export const specsDataPrecast = [
 export const allSpecsData = {
   "concrete-block": specsDataBlock,
   "precast-concrete": specsDataPrecast,
+  "stenslag": specsDataBlock,
+  "ready-mix": specsDataPrecast,
 };
