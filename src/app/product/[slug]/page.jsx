@@ -6,6 +6,23 @@ import { notFound } from "next/navigation";
 import { allSpecsData } from "@/lib/data/specsData";
 import BenefitsSection from "@/components/page/product/BenefitsSection";
 
+export async function generateMetadata({ params }) {
+  const slug = params.slug;
+  const product = productData[slug];
+
+  if (!product) return {};
+
+  return {
+    title: `${product.hero.title} | Duta Beton`,
+    description: product.hero.description,
+    openGraph: {
+      title: `${product.hero.title} | Duta Beton`,
+      description: product.hero.description,
+      images: [`${product.hero.imageSrc}`],
+    },
+  };
+}
+
 export default async function ProductPage({ params }) {
   const slug = await params.slug;
   const data = productData[slug];
