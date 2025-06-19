@@ -5,9 +5,12 @@ export default function CardImage({
   alt = "image",
   align = "right",
   variant = "large", // "large" | "medium"
+  object = "cover",
 }) {
   const borderPosition =
-    align === "right" ? "top-[-8px] right-[-8px]" : "top-[-8px] left-[-8px]";
+    align === "right"
+      ? "top-[-12px] right-[-12px]"
+      : "top-[-12px] left-[-12px]";
 
   const sizeClasses =
     variant === "medium"
@@ -28,7 +31,7 @@ export default function CardImage({
         src={src}
         alt={alt}
         fill
-        className="rounded-3xl bg-neutral-white object-cover relative z-10 shadow-shadow-card-large"
+        className={`rounded-3xl bg-neutral-white object-${object} relative z-10 `}
         sizes={imageSizes}
       />
     </div>
