@@ -17,11 +17,29 @@ export default function BenefitsSection() {
             />
           </div>
           <div className="flex flex-col ml-bold-sm md:ml-[556px] gap-[100px] md:gap-[64px] w-full items-center md:absolute">
-            <BenefitCard title="Hemat Waktu" description="Uji mutu dan kwalitas lebih terjamin keakuratannya" icon="/product/benefit_1.svg" gradient="white" textColor="black" />
+            <BenefitCard
+              title="Hemat Waktu"
+              description="Uji mutu dan kwalitas lebih terjamin keakuratannya"
+              icon="/product/benefit_1.svg"
+              gradient="white"
+              textColor="black"
+            />
             <div className="ml-bold-3xl md:ml-bold-4xl">
-              <BenefitCard title="Tepat Guna" description="Meminimalkan limbah material yang dapat mencemari lingkungan" icon="/product/benefit_2.svg" gradient="yellow" textColor="black" />
+              <BenefitCard
+                title="Tepat Guna"
+                description="Meminimalkan limbah material yang dapat mencemari lingkungan"
+                icon="/product/benefit_2.svg"
+                gradient="yellow"
+                textColor="black"
+              />
             </div>
-            <BenefitCard title="Mutu" description="Uji mutu dan kwalitas lebih terjamin keakuratannya" icon="/product/benefit_3.svg" gradient="gray" textColor="white" />
+            <BenefitCard
+              title="Mutu"
+              description="Uji mutu dan kwalitas lebih terjamin keakuratannya"
+              icon="/product/benefit_3.svg"
+              gradient="gray"
+              textColor="white"
+            />
           </div>
         </div>
       </div>

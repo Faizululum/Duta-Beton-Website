@@ -39,8 +39,7 @@ export default function CalculatorPage() {
             <div className="flex flex-col gap-thin-sm text-center md:text-left">
               <h5 className="text-mob-h5 font-medium">Pahami kebutuhan Anda</h5>
               <p className="text-desc">
-                Kami akan menghubungi Anda secara langsung untuk mendapatkan
-                bantuan
+                Hubungi kami secara langsung untuk mendapatkan bantuan
               </p>
             </div>
             <Link href="/contact" className="w-full md:w-max h-max">

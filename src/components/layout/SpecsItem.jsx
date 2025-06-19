@@ -20,6 +20,7 @@ export default function SpecsItem({
         alt={imageAlt}
         align={imageAlign}
         variant="medium"
+        object="contain"
       />
       <SpecsTable {...specsProps} />
       <div className="border-space-gray md:hidden" />

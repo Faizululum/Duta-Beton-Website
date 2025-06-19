@@ -26,7 +26,7 @@ export default function SpecsTable({
               Warna
             </h5>
             <div
-              className={`flex -space-x-regular-lg md:-space-x-bold-sm ${textAlign}`}
+              className={`-space-x-regular-lg md:-space-x-bold-sm flex relative ${textAlign}`}
             >
               {colors.map((color, idx) => {
                 const colorClass =
@@ -35,10 +35,12 @@ export default function SpecsTable({
                     : color.toLowerCase() === "merah"
                     ? "bg-primary-red text-white"
                     : "bg-neutral-white";
+
                 return (
                   <span
                     key={idx}
-                    className={`px-bold-sm md:px-bold-lg py-thin-sm md:py-thin-md rounded-full ${colorClass}`}
+                    style={{ zIndex: colors.length - idx }}
+                    className={`px-bold-sm md:px-bold-lg py-thin-sm md:py-thin-md rounded-full ${colorClass} relative`}
                   >
                     {color}
                   </span>
