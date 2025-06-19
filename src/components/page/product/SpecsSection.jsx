@@ -1,16 +1,15 @@
 import TitleLayout from "@/components/layout/TextLayout";
 import SpecsItem from "@/components/layout/SpecsItem";
-import { specsDataBlock } from "@/lib/data/specsData";
 import Link from "next/link";
 import Button from "@/components/general/Button";
 
-export default function SpecsSection() {
+export default function SpecsSection({ data }) {
   return (
     <div className="mb-bold-3xl flex flex-col items-center gap-bold-lg justify-center w-full">
       <div className="card-container flex flex-col items-center gap-regular-lg md:gap-bold-lg">
         <TitleLayout title="Spesifikasi" description="Lorem ipsum" />
         <div className="md:w-[1200px] w-[400px] px-thin-lg flex flex-col gap-regular-lg md:gap-bold-lg">
-          {specsDataBlock.map((item, index) => (
+          {data.map((item, index) => (
             <SpecsItem
               key={index}
               imageSrc={item.imageSrc}

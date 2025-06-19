@@ -379,3 +379,8 @@ export const specsDataPrecast = [
     perMeterNote: "",
   },
 ];
+
+export const allSpecsData = {
+  "concrete-block": specsDataBlock,
+  "precast-concrete": specsDataPrecast,
+};
