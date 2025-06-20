@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function CardFormLayout({ children }) {
   return (
     <div className="mb-bold-3xl">
-      <div className="relative h-[550px] w-full -mb-[335px]">
+      <div className="relative h-[550px] w-full -mb-[335px] -z-10">
         <Image
           src="/about/detailed.jpg"
           alt="detailed"
