@@ -3,14 +3,14 @@ import Link from "next/link";
 
 export default function ProjectCard({ title, location, images, slug }) {
   return (
-    <div className="w-[376px] shadow-shadow-card-small p-regular-md bg-white border-2 border-neutral-white rounded-xl">
+    <div className="group w-[376px] hover:shadow-shadow-card-small p-regular-md bg-white border-2 border-neutral-white rounded-xl transform transition-all duration-300 hover:-translate-y-2">
       <div className="flex flex-col gap-thin-md">
-        <div className="w-full h-[200px] relative">
+        <div className="w-full h-[200px] relative overflow-hidden rounded-lg">
           <Image
             src={images}
             alt={title}
             fill
-            className="object-cover rounded-lg"
+            className="object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
           />
         </div>
         <div className="flex w-full items-center justify-between">
