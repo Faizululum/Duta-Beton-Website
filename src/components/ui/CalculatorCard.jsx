@@ -8,7 +8,7 @@ export default function CalculatorCard({ category }) {
   const [width, setWidth] = useState("");
   const [height, setHeight] = useState("");
 
-  const blockArea = (10.5 * 21) / 100;
+  const blockArea = (11 * 21) / 100;
 
   const calculateTotal = () => {
     if (category === "Concrete Block") {
@@ -17,7 +17,7 @@ export default function CalculatorCard({ category }) {
       return `${Math.ceil(totalBlocks)} Pcs`;
     } else {
       const totalVolume = length * width * height;
-      const totalLiters = totalVolume * 1000;
+      const totalLiters = totalVolume;
       return `${Math.ceil(totalLiters)} Liter`;
     }
   };

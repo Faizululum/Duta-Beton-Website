@@ -7,6 +7,7 @@ import CalcImage from "@/components/ui/CalcImage";
 import CalculatorCard from "@/components/ui/CalculatorCard";
 import CategoryCard from "@/components/ui/CategoryCard";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const categories = ["Ready Mix", "Concrete Block"];
 
@@ -14,11 +15,22 @@ export default function CalculatorPage() {
   const [activeCategory, setActiveCategory] = useState(categories[0]);
 
   return (
-    <div className="flex flex-col items-center gap-bold-lg">
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="flex flex-col items-center gap-bold-lg"
+    >
       <h1 className="text-mob-h2 md:text-mob-h2 font-bold text-white">
         Kalkulator
       </h1>
-      <div className="flex flex-col items-center gap-bold-sm md:gap-bold-lg">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.3 }}
+        className="flex flex-col items-center gap-bold-sm md:gap-bold-lg"
+      >
         <div className="card-container flex flex-col md:w-[1256px] gap-regular-sm md:gap-bold-sm p-thin-lg md:p-bold-lg md:pt-regular-lg pb-regular-lg">
           <div className="flex flex-col gap-thin-lg md:gap-regular-lg">
             <TitleLayout title="Hitung Kebutuhan Produk" />
@@ -34,7 +46,13 @@ export default function CalculatorPage() {
           </div>
         </div>
 
-        <div className="p-thin-lg md:px-bold-lg md:py-bold-sm w-[376px] md:w-full bg-white shadow-shadow-card-small rounded-xl md:rounded-3xl">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          viewport={{ once: true }}
+          className="p-thin-lg md:px-bold-lg md:py-bold-sm w-[376px] md:w-full bg-white shadow-shadow-card-small rounded-xl md:rounded-3xl"
+        >
           <div className="flex flex-col md:flex-row items-center md:justify-between gap-thin-lg">
             <div className="flex flex-col gap-thin-sm text-center md:text-left">
               <h5 className="text-mob-h5 font-medium">Pahami kebutuhan Anda</h5>
@@ -52,8 +70,8 @@ export default function CalculatorPage() {
               />
             </Link>
           </div>
-        </div>
-      </div>
-    </div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 }
