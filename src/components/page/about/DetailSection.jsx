@@ -1,10 +1,19 @@
+"use client";
+
 import CertifiedCard from "@/components/ui/CertifiedCard";
 import ClientCard from "@/components/ui/ClientCard";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function DetailSection() {
   return (
-    <div className="flex flex-col relative w-full h-[573px] md:h-[470px] px-regular-lg md:px-bold-4xl py-bold-lg border-bottom mb-bold-3xl">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+      className="flex flex-col relative w-full h-[573px] md:h-[470px] px-regular-lg md:px-bold-4xl py-bold-lg border-bottom mb-bold-3xl"
+    >
       <Image
         src="/about/detailed.jpg"
         alt="detailed"
@@ -14,7 +23,13 @@ export default function DetailSection() {
       />
       <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black/65 via-black/50 via-50% to-black/0 to-88% pointer-events-none -z-10" />
       <div className="relative z-10 h-full md:w-[1100px] flex flex-col gap-bold-sm md:gap-bold-lg items-center text-white">
-        <div className="flex flex-col gap-thin-lg md:gap-regular-sm">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true, amount: 0.8 }}
+          className="flex flex-col gap-thin-lg md:gap-regular-sm"
+        >
           <h3 className="text-mob-h3 md:text-desk-h3 font-medium">
             Your Trust Project
           </h3>
@@ -26,7 +41,7 @@ export default function DetailSection() {
             skilled expertise, and customer-centric approaches to bring visions
             to life.
           </p>
-        </div>
+        </motion.div>
         <div className="flex w-full gap-regular-sm md:gap-bold-sm items-start">
           <ClientCard
             count="250+"
@@ -47,6 +62,6 @@ export default function DetailSection() {
       <div className="flex justify-end absolute bottom-0 right-0">
         <CertifiedCard />
       </div>
-    </div>
+    </motion.div>
   );
 }
