@@ -9,8 +9,8 @@ export default function CardImage({
 }) {
   const borderPosition =
     align === "right"
-      ? "top-[-12px] right-[-12px]"
-      : "top-[-12px] left-[-12px]";
+      ? "top-[-8px] right-[-8px] md:top-[-12px] md:right-[-12px]"
+      : "top-[-8px] left-[-8px] md:top-[-12px] md:left-[-12px]";
 
   const sizeClasses =
     variant === "medium"

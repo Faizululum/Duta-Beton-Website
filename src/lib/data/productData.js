@@ -4,7 +4,7 @@ export const productData = {
       title: "Concrete Block",
       description:
         "Concrete Block atau Paving Block merupakan perkerasan blok beton yang merupakan versi modern dari batu alam. Digunakan untuk area perkerasan seperti trotoar, halaman, dan jalan lingkungan.",
-      imageSrc: "/product/product_hero_block.png",
+      imageSrc: "/product/product_hero_block.jpg",
     },
     about: {
       title: "Concrete Block",
@@ -32,7 +32,7 @@ export const productData = {
       title: "Ready Mix",
       description:
         "Ready Mix adalah beton cair siap pakai yang dikirim langsung ke lokasi proyek dengan truk mixer. Praktis dan efisien untuk berbagai jenis konstruksi.",
-      imageSrc: "/product/product_hero_mix.jpg",
+      imageSrc: "/hero_2.jpg",
     },
     about: {
       title: "Ready Mix",
