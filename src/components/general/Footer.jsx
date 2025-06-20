@@ -1,8 +1,15 @@
+"use client";
+
 import { Icon } from "@iconify/react";
 import Logo from "../ui/Logo";
 import Link from "next/link";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function Footer() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-200px" });
+
   const footLinks = [
     { label: "Beranda", href: "/" },
     { label: "Tentang", href: "/about" },
@@ -11,7 +18,13 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="flex flex-col w-full gap-6 h-auto md:h-[400px] font-roboto bg-neutral-grayDark border-t-8 border-primary-red justify-center px-regular-lg py-bold-lg lg:py-0 lg:px-bold-4xl text-white">
+    <motion.footer
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="flex flex-col w-full gap-6 h-auto md:h-[400px] font-roboto bg-neutral-grayDark border-t-8 border-primary-red justify-center px-regular-lg py-bold-lg lg:py-0 lg:px-bold-4xl text-white"
+    >
       <div className="flex flex-col md:flex-row gap-regular-sm md:gap-0 items-start md:items-center justify-between w-full">
         <div className="flex flex-col gap-thin-lg">
           <Logo />
@@ -21,7 +34,7 @@ export default function Footer() {
             </h2>
             <div className="flex flex-col gap-thin-xs md:gap-thin-sm">
               <a
-                href="/"
+                href="https://maps.app.goo.gl/N9y2sMQWX5at3vQw7"
                 className="flex hover-red items-center gap-thin-sm md:gap-2"
               >
                 <Icon
@@ -132,7 +145,10 @@ export default function Footer() {
               Social Media
             </span>
             <div className="flex flex-col gap-thin-xs md:gap-1 text-mob-tiny md:text-desk-tiny font-normal">
-              <a href="/" className="hover-red flex items-center gap-1">
+              <a
+                href="https://id.linkedin.com/company/dutabeton"
+                className="hover-red flex items-center gap-1"
+              >
                 <Icon
                   icon="mdi:linkedin"
                   className="w-regular-md h-regular-md md:w-regular-lg md:h-regular-lg"
@@ -140,7 +156,10 @@ export default function Footer() {
                 />
                 <p>dutabeton</p>
               </a>
-              <a href="/" className="hover-red flex items-center gap-1">
+              <a
+                href="https://www.instagram.com/dutabetonmandiri/"
+                className="hover-red flex items-center gap-1"
+              >
                 <Icon
                   icon="mdi:instagram"
                   className="w-regular-md h-regular-md md:w-regular-lg md:h-regular-lg"
@@ -159,6 +178,6 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-2 border-white w-full" />
-    </footer>
+    </motion.footer>
   );
 }
