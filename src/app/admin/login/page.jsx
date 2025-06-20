@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 
@@ -8,6 +8,11 @@ export default function AdminLogin() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -25,6 +30,8 @@ export default function AdminLogin() {
       toast.error(data.error || "Login gagal");
     }
   };
+
+  if (!mounted) return null;
 
   return (
     <div className="h-screen flex items-center">
