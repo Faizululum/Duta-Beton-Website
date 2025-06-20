@@ -23,7 +23,7 @@ export default function AdminProjectPage() {
   }, []);
 
   return (
-    <div className="p-32 h-screen">
+    <div className="p-32 h-min-screen">
       <div className="flex w-full justify-between">
         <h1 className="text-2xl font-bold mb-4">Data Proyek</h1>
         <Link href="/admin/project/create">
