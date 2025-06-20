@@ -29,7 +29,7 @@ export default function AboutSection() {
           <div className="flex flex-col gap-thin-sm md:gap-thin-md">
             <TitleLayout
               title="Tentang Kami"
-              description="Lorem ipsum"
+              description="Material dan kualitas yang dapat diandalkan"
               align="left"
             />
             <BodyLayout
