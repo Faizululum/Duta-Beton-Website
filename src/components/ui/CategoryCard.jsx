@@ -3,8 +3,13 @@
 import { useState } from "react";
 import { Icon } from "@iconify/react";
 import CategoryButton from "./CategoryButton";
+import { motion, AnimatePresence } from "framer-motion";
 
-export default function CategoryCard({ categories, activeCategory, setActiveCategory }) {
+export default function CategoryCard({
+  categories,
+  activeCategory,
+  setActiveCategory,
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleSelect = (category) => {
@@ -30,21 +35,32 @@ export default function CategoryCard({ categories, activeCategory, setActiveCate
           />
         </button>
         {isOpen && (
-          <div className="absolute flex flex-col gap-thin-sm p-thin-md z-10 mt-2 w-full bg-white border rounded-2xl shadow-lg">
-            {categories.map((category) => (
-              <button
-                key={category}
-                className={`w-full rounded-full text-left px-regular-sm py-thin-sm ${
-                  activeCategory === category
-                    ? "bg-primary-red text-white font-medium"
-                    : "text-neutral-gray font-normal"
-                }`}
-                onClick={() => handleSelect(category)}
+          <AnimatePresence>
+            {isOpen && (
+              <motion.div
+                key="dropdown"
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.2 }}
+                className="absolute flex flex-col gap-thin-sm p-thin-md z-10 mt-2 w-full bg-white border rounded-2xl shadow-lg"
               >
-                {category}
-              </button>
-            ))}
-          </div>
+                {categories.map((category) => (
+                  <button
+                    key={category}
+                    className={`w-full rounded-full text-left px-regular-sm py-thin-sm ${
+                      activeCategory === category
+                        ? "bg-primary-red text-white font-medium"
+                        : "text-neutral-gray font-normal"
+                    }`}
+                    onClick={() => handleSelect(category)}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
         )}
       </div>
 
