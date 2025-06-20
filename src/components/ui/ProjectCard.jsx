@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function ProjectCard({ title, location, images, slug }) {
   return (
-    <div className="group w-[376px] hover:shadow-shadow-card-small p-regular-md bg-white border-2 border-neutral-white rounded-xl transform transition-all duration-300 hover:-translate-y-2">
+    <div className="group w-[376px] hover:shadow-shadow-card-small p-regular-md bg-white border border-neutral-white rounded-xl transform transition-all duration-300 hover:-translate-y-2">
       <div className="flex flex-col gap-thin-md">
         <div className="w-full h-[200px] relative overflow-hidden rounded-lg">
           <Image
