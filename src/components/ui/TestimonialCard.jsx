@@ -9,9 +9,9 @@ export default function TestimonialCard({ name, profession, quote, imageSrc }) {
           <Image
             src={imageSrc}
             alt="testimonial"
-            className="h-[64px] md:h-[72px] w-auto"
-            width={72}
-            height={72}
+            className="h-[64px] md:h-[72px] w-[64px] md:w-[72px] rounded-full object-cover"
+            width={128}
+            height={128}
           />
           <div className="flex flex-col gap-0">
             <h3 className="text-mob-h6 md:text-desk-h6 font-bold">{name}</h3>

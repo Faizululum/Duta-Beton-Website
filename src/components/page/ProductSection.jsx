@@ -1,5 +1,8 @@
+"use client";
+
 import TitleLayout from "../layout/TextLayout";
 import ProductCard from "../ui/ProductCard";
+import { motion } from "framer-motion";
 
 export default function ProductSection() {
   const products = [
@@ -30,22 +33,36 @@ export default function ProductSection() {
   ];
 
   return (
-    <div className="space-text-section px-regular-lg">
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true, amount: 0.5 }}
+      className="space-text-section px-regular-lg"
+    >
       <TitleLayout
         title="Produk Kami"
         description="Kami menyediakan produk yang berkualitas dan bertahan lama."
       />
       <div className="flex flex-col md:flex-row gap-regular-sm md:gap-bold-lg items-center">
-        {products.map((product) => (
-          <ProductCard
-            key={product.title}
-            title={product.title}
-            description={product.description}
-            imageSrc={product.imageSrc}
-            slug={product.slug}
-          />
+        {products.map((product, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
+            viewport={{ once: true, amount: 0.5 }}
+          >
+            <ProductCard
+              key={product.title}
+              title={product.title}
+              description={product.description}
+              imageSrc={product.imageSrc}
+              slug={product.slug}
+            />
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }

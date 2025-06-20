@@ -32,12 +32,6 @@ export default function AdminProjectPage() {
             Tambah Proyek
           </div>
         </Link>
-        <button
-          onClick={handleLogout}
-          className="bg-red-600 text-white px-4 py-2 rounded"
-        >
-          Logout
-        </button>
       </div>
       <table className="w-full table-auto border border-gray-300">
         <thead>
@@ -80,6 +74,12 @@ export default function AdminProjectPage() {
           ))}
         </tbody>
       </table>
+        <button
+          onClick={handleLogout}
+          className="bg-red-600 text-white px-4 py-2 rounded mt-4"
+        >
+          Logout
+        </button>
     </div>
   );
 }

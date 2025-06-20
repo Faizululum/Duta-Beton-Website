@@ -8,25 +8,39 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const testimonials = [
   {
-    name: "Jhon Doe",
-    profession: "CEO",
+    name: "Hendra Wijaya",
+    profession: "Kontraktor Perumahan",
     quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    imageSrc: "/testimonial/user_1.png",
+      "Saya selalu percayakan kebutuhan ready mix dan paving ke Duta Beton Mandiri. Kualitasnya konsisten, dan pengirimannya tepat waktu.",
+    imageSrc: "/testimonial/user_hendra.jpg",
   },
   {
-    name: "Jane Smith",
-    profession: "Marketing Director",
+    name: "Siti Rohmah",
+    profession: "Pemilik Toko Bangunan",
     quote:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    imageSrc: "/testimonial/user_1.png",
+      "Produk dari Duta Beton seperti batako dan kansteen sangat laku di toko saya. Pelayanan mereka juga ramah dan profesional.",
+    imageSrc: "/testimonial/user_siti.jpg",
   },
   {
-    name: "Michael Scott",
-    profession: "Regional Manager",
+    name: "Bagus Pratama",
+    profession: "Site Manager Proyek",
     quote:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    imageSrc: "/testimonial/user_1.png",
+      "Mutu beton K350 dari Duta Beton sangat kuat dan sesuai spesifikasi. Cocok untuk proyek jalan dan gedung bertingkat.",
+    imageSrc: "/testimonial/user_3.jpg",
+  },
+  {
+    name: "Lina Santoso",
+    profession: "Developer Perumahan",
+    quote:
+      "Saya suka kerja sama dengan Duta Beton karena bisa pesan custom precast sesuai desain kami. Respons cepat dan harga bersaing.",
+    imageSrc: "/testimonial/user_lina.jpg",
+  },
+  {
+    name: "Doni Kurniawan",
+    profession: "Kontraktor Jalan",
+    quote:
+      "Stenslag dari Duta Beton sangat membantu untuk proyek jalan desa. Ukuran sesuai dan kualitas batunya oke banget.",
+    imageSrc: "/testimonial/user_doni.jpg",
   },
 ];
 
@@ -57,7 +71,6 @@ export default function TestimonialSection() {
     );
   };
 
-  // Auto-slide setiap 8 detik
   useEffect(() => {
     const interval = setInterval(() => {
       paginate(1);
@@ -66,7 +79,13 @@ export default function TestimonialSection() {
   }, []);
 
   return (
-    <div className="relative space-text-section h-max w-full py-regular-lg overflow-x-clip">
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true, amount: 0.5 }}
+      className="relative space-text-section h-max w-full py-regular-lg overflow-x-clip"
+    >
       {/* Background */}
       <Image
         src="/testimonial/brick_white.jpg"
@@ -82,7 +101,13 @@ export default function TestimonialSection() {
       />
 
       {/* Testimonial Slider */}
-      <div className="relative flex justify-center items-center w-full h-[258px] md:h-[320px]">
+      <motion.div
+        initial={{ opacity: 0, y: 50, zIndex: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true, amount: 0.8 }}
+        className="relative flex justify-center items-center w-full h-[258px] md:h-[320px]"
+      >
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={index}
@@ -100,7 +125,7 @@ export default function TestimonialSection() {
             <TestimonialCard {...testimonials[index]} />
           </motion.div>
         </AnimatePresence>
-      </div>
+      </motion.div>
 
       {/* Navigasi Arrow */}
       <div className="flex justify-center gap-bold-2xl md:gap-bold-4xl">
@@ -144,6 +169,6 @@ export default function TestimonialSection() {
           />
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }
