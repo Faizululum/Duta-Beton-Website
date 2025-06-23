@@ -25,7 +25,7 @@ export default function AdminLogin() {
     const data = await res.json();
     if (res.ok) {
       toast.success("Login berhasil");
-      router.push("/admin/project");
+      router.push("/admin");
     } else {
       toast.error(data.error || "Login gagal");
     }
