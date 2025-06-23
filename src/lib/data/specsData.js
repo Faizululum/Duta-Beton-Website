@@ -407,6 +407,6 @@ export const specsDataPrecast = [
 export const allSpecsData = {
   "concrete-block": specsDataBlock,
   "precast-concrete": specsDataPrecast,
-  "stenslag": specsDataBlock,
-  "ready-mix": specsDataPrecast,
+  "stenslag": "",
+  "ready-mix": "",
 };

@@ -31,3 +31,12 @@ model Admin {
   password String
   createdAt DateTime @default(now())
 }
+
+model Message {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  nama      String
+  email     String
+  phone     String?
+  message   String
+  createdAt DateTime @default(now())
+}

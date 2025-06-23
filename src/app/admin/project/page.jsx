@@ -4,16 +4,9 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
-import { useRouter } from "next/navigation";
 
 export default function AdminProjectPage() {
   const [projects, setProjects] = useState([]);
-  const router = useRouter();
-
-  const handleLogout = async () => {
-    await fetch("/api/admin/logout", { method: "POST" });
-    router.push("/admin/login");
-  };
 
   useEffect(() => {
     fetch("/api/projects")
@@ -24,8 +17,14 @@ export default function AdminProjectPage() {
 
   return (
     <div className="p-32 h-min-screen">
-      <div className="flex w-full justify-between">
-        <h1 className="text-2xl font-bold mb-4">Data Proyek</h1>
+      <h1 className="text-2xl font-bold mb-4">Data Proyek</h1>
+      <div className="flex w-full mb-2 justify-between">
+        <Link href="/admin">
+          <div className="flex gap-thin-sm w-max items-center text-white bg-green-500 pr-4 pl-3 py-2 rounded-md">
+            <Icon icon="ion:arrow-back-circle-outline" width="24" height="24" />
+            Dashboard
+          </div>
+        </Link>
         <Link href="/admin/project/create">
           <div className="flex gap-thin-xs w-max items-center text-white bg-blue-500 px-4 py-2 rounded-md">
             <Icon icon="flowbite:circle-plus-outline" width="24" height="24" />
@@ -74,12 +73,6 @@ export default function AdminProjectPage() {
           ))}
         </tbody>
       </table>
-        <button
-          onClick={handleLogout}
-          className="bg-red-600 text-white px-4 py-2 rounded mt-4"
-        >
-          Logout
-        </button>
     </div>
   );
 }

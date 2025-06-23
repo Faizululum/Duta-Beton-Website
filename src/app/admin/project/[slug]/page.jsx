@@ -2,11 +2,11 @@
 
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import slugify from "slugify";
 import { UploadDropzone } from "@/lib/uploadthing";
 import { Icon } from "@iconify/react";
 import ConfirmModal from "@/components/general/ConfirmModal";
 import toast from "react-hot-toast";
+import Link from "next/link";
 
 export default function AdminEditProject() {
   const router = useRouter();
@@ -65,6 +65,12 @@ export default function AdminEditProject() {
   return (
     <div className="py-bold-4xl">
       <div className="p-bold-lg pt-regular-lg w-[1256px] mx-auto card-container">
+        <Link href="/admin/project">
+          <div className="flex gap-thin-sm w-max items-center text-white bg-green-500 pr-4 pl-3 py-2 rounded-md">
+            <Icon icon="ion:arrow-back-circle-outline" width="24" height="24" />
+            Kembali
+          </div>
+        </Link>
         <h1 className="text-2xl text-center font-bold mb-4">Edit Proyek</h1>
         {errors.general && (
           <p className="text-red-500 mb-2">{errors.general}</p>
